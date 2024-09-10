@@ -1,7 +1,7 @@
-## Live App
+# Live Product
 https://paul-nguyen-d.github.io/pokemon-app/
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
