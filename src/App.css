@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    --bg-color: rgba( 255,255,255, .96 );
+    font-family: "Poppins", sans-serif;
+    background-image: linear-gradient(0deg, var(--bg-color), var(--bg-color)), url('./image/bg.png');
+}
+
+.pokemon-app {
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.pokemon-app > h1 {
+    position: relative;
+    text-align: center;
+    font-size: 4rem;
+    margin: 1rem 0 4rem;
+    color: #444;
+}
+
+.pokemon-app > h1::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 4em;
+    height: 6px;
+    background-color: #fb6c6c;
+    top: 100%;
+    left: 50%;
+    margin-left: -2em;
+}
+
+.pokemon-app > h1 > i {
+    display: inline-block;
+    height: .7em;
+    width: .7em;
+    background-image: url('./image/pokeball.svg');
+    background-repeat: no-repeat;
+}
+/* 
+    Pokemon type colors
+*/
+
+.type-normal {
+    --color: #c2c2a1;
+}
+
+.type-ground {
+    --color: #b1736c;
+}
+
+.type-poison {
+    --color: #7c538c;
+}
+
+.type-grass {
+    --color: #48d0b0;
+}
+
+.type-fire {
+    --color: #fb6c6c;
+}
+
+.type-water {
+    --color: #609fb5;
+}
+
+.type-electric {
+    --color: #ffd86f;
+}
+
+.type-fairy {
+    --color: #f469a9;
+}
+
+.type-bug {
+    --color: #c3ce75;
+}
+
+.type-fighting {
+    --color: #d6b591;
+}
+
+.type-psychic {
+    --color: #9b7fa6;
+}
+
+.type-ice {
+    --color: #7fccec;
+}
+
+.type-rock {
+    --color: #a6aab6;
+}
+
+.type-dragon {
+    --color: #f9be00;
+}
+
+.type-flying {
+    --color: #bab0d5;
+}
+
+.type-ghost {
+    --color: #533c5c;
+}
+
+.type-steel {
+    --color: #9d8ca4;
+}
+
+.type-dark {
+    --color: #675417;
+}
+
+/* 
+    Background Pokemon decoration
+*/
+.bg-pokeball {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -10px;
+    bottom: -10px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.bg-pokeball::before,
+.bg-pokeball::after {
+    display: block;
+    border-radius: 100%;
+}
+
+.bg-pokeball::before {
+    content: "";
+    position: relative;
+    width: 10em;
+    padding-bottom: 10em;
+    border: 6em solid currentColor;
+    clip-path: polygon(
+        0 0,
+        0 40%,
+        50% 40%,
+        50% 60%,
+        0 60%,
+        0 100%,
+        100% 100%,
+        100% 60%,
+        50% 60%,
+        50% 40%,
+        100% 40%,
+        100% 0
+    );
+}
+
+.bg-pokeball::after {
+    content: "";
+    position: absolute;
+    width: 5em;
+    padding-bottom: 5em;
+    background-color: currentColor;
+}
+
+.searchContainer {
+    display: flex;
+    width: 18rem;
+    height: 4rem;
+    background-color: #FFF;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
+    border-radius: 100rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto 4rem; 
+}
+
+.searchButton{
+    width: 18rem;
+    height: 4rem;
+    background-color: #42dcff;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.6rem;
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+}
+.searchButton:hover,
+.searchButton:active,
+.searchButton:focus
+{
+    outline: none;
+    background-color: #fb6c6c;
+}
+
+.searchButton.active
+{
+    transform: scaleX(1); 
+    opacity: 1;
+    background-color: #fb6c6c;
+}
+
+/* 
+    Animations
+*/
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pull-up-center {
+    from {
+        transform: translateY(50%) translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+    }
+}
+
+@keyframes pull-down-center {
+    from {
+        transform: translateY(0%) translateX(-50%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(50%) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+@keyframes pull-up {
+    from {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fill {
+    from {
+        width: 0;
+    }
+}

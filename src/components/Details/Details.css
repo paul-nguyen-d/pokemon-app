@@ -1,0 +1,198 @@
+.details-container {
+    background-color: #FFF;
+    color: #333;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.4);
+    border-radius: 3rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    animation: 0.3s pull-up both ease-out .2s;
+}
+
+.details-container .pokemon-image {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 30%;
+    height: auto;
+    max-height: 20vh;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    animation: 0.3s fade-in ease-out .5s both;
+}
+
+.details-container .tabs-switch-container {
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.details-container .tabs-switch-container .tab-switch 
+{
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 1rem 1rem;
+    position: relative;
+    color: rgba(0, 0, 0, 0.2);
+    outline: none;
+    transition: 0.3s all;
+}
+
+.details-container .tabs-switch-container .tab-switch.active,
+.details-container .tabs-switch-container .tab-switch:hover {
+    color: inherit;
+    cursor: pointer;
+}
+
+.details-container .tabs-switch-container .tab-switch.active::after 
+{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    margin-top: -0.5px;
+    background-color: #db6c6c;
+}
+
+.details-container .tab {
+    overflow-y: auto;
+}
+
+.details-container .tab table {
+    width: 100%;
+}
+
+.details-container .tab table td {
+    padding: 0.5rem;
+    text-transform: capitalize;
+}
+
+.details-container .tab table td:first-child {
+    width: 20%;
+}
+
+.details-container .tab table td:nth-child(2) {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details-container .tab table td:nth-child(2) .range-view {
+    width: 90%;
+}
+
+.details-container .tab-evolution .evolution-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.details-container .tab-evolution .evolution-container:last-child {
+    margin-bottom: 0;
+}
+
+.details-container .tab-evolution .evolve-container {
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.details-container .tab-evolution .evolve-container .image-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.details-container .tab-evolution .evolve-container .bg-pokeball {
+    color: rgba(0, 0, 0, 0.05);
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 0.7vmin;
+    z-index: 1;
+}
+
+.details-container .tab-evolution .evolve-container img {
+    max-width: 80%;
+    max-height: 14vh;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.details-container .tab-evolution .evolution-container .trigger-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.details-container .tab-evolution .evolution-container .trigger-container .arrow {
+    --color: #eee;
+    --width: 3px;
+    display: block;
+    height: var(--width);
+    width: 100%;
+    background-color: var(--color);
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.details-container
+    .tab-evolution
+    .evolution-container
+    .trigger-container
+    .arrow::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    border: var(--width) solid var(--color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    right: 0;
+    top: 0;
+    margin-top: calc(var(--width) * -1.4);
+    transform: rotate(45deg);
+}
+
+.details-container .tab-evolution .loader
+{
+    padding: 1em;
+}
+
+@media screen and (max-width: 500px) {
+    .details-container .tabs-switch-container .tab-switch {
+        padding: .5rem;
+        font-size: .8rem;
+    }
+
+    .details-container .tab{
+        font-size: .8rem;
+    }
+}

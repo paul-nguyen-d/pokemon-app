@@ -1,0 +1,31 @@
+.pokemon-view{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and ( min-width: 800px )
+{
+    .pokemon-view
+    {
+        grid-template-columns: repeat( 2, 1fr );
+    }
+}
+
+@media screen and ( min-width: 1200px )
+{
+    .pokemon-view
+    {
+        grid-template-columns: repeat( 3, 1fr );
+    }
+}
+
+@media screen and ( min-width: 1920px )
+{
+    .pokemon-view
+    {
+        grid-template-columns: repeat( 4, 1fr );
+    }
+}
